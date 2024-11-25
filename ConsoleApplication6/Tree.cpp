@@ -14,15 +14,13 @@ Tree::Tree()
 	: _root(nullptr)
 {}
 
-void Tree::insert(int value, Node* node)
+void Tree::insert(int value, Node*& node)
 {
 	if (node == nullptr)
 	{
-		Node* newNode = new Node(value);
-		node = newNode;
-		return;
+		node = new Node(value);
 	}
-	if (value > node-> value)
+	else if (value > node-> value)
 	{
 		insert(value, node->right);
 	}
