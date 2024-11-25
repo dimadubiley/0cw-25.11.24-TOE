@@ -14,7 +14,7 @@ class Tree
 	void insert(int value, Node* node);
 public:
 	Tree();
-	void insert(int value);
+	void insert(int value, Node* node);
 	void print();
 };
 
