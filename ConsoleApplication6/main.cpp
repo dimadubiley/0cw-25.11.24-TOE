@@ -1,16 +1,26 @@
 #include <iostream>
+#include "Tree.h"
 using namespace std;
 
-int power(int num, int step)
+double power(double base, int exponent)
 {
-    if (step == 1)
+    if (exponent == 0)
     {
-        return num;
+        return 1.0;
     }
-    return num * power(num, step - 1);
+    if (exponent > 0)
+    {
+        return base * power(base, exponent - 1);
+    }
+    else
+    {
+        return 1.0 / power(base, -exponent);
+    }
 }
 
-int main()
+int main() 
 {
-    cout << power(2, 3);
+    cout << power(2, 3) << endl;
+    cout << power(2, 0) << endl;
+    cout << power(2, -2) << endl;
 }
